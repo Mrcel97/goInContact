@@ -15,6 +15,7 @@ This chapter will be updated every time I will start a new course/tutorial/test.
 > > 4. Pointers
 > > 5. WebApplication
 > > 6. Structs
+> > 7. Methods
 
 
 ## Go documentation:
