@@ -2,14 +2,19 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 )
 
-func main() {
-	x := 15
-	a := &x // point to memory address
+func index_handler(w http.ResponseWriter, r *http.Request) { // r *http.Request: Reading through http.Request
+	fmt.Fprint(w, "Whoa, Go is neat!")
+}
 
-	fmt.Println(a)
-	fmt.Println(*a) // read through the memory address
-	*a = 5
-	fmt.Println(x)
+func about_handler(w http.ResponseWriter, r *http.Request) { // r *http.Request: Reading through http.Request
+	fmt.Fprint(w, "WebApp made with Golang!")
+}
+
+func main() {
+	http.HandleFunc("/", index_handler)
+	http.HandleFunc("/about", about_handler)
+	http.ListenAndServe(":8000", nil) // nil: Python's None
 }
