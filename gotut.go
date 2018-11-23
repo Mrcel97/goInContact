@@ -2,43 +2,19 @@ package main
 
 import (
 	"fmt"
-	"reflect"
+	"net/http"
 )
 
-func add(x, y float64) float64 {
-	return x + y
+func index_handler(w http.ResponseWriter, r *http.Request) { // r *http.Request: Reading through http.Request
+	fmt.Fprint(w, "Whoa, Go is neat!")
 }
 
-func multiple(a, b string) (string, string) {
-	return a, b
+func about_handler(w http.ResponseWriter, r *http.Request) { // r *http.Request: Reading through http.Request
+	fmt.Fprint(w, "WebApp made with Golang!")
 }
 
 func main() {
-	num1, num2 := 5.6, 9.5
-	w1, w2 := "Hey", "there"
-
-	fmt.Println(add(num1, num2))
-	fmt.Println(multiple(w1, w2))
-
-	// Cast:
-	var a int = 62
-	var b float64 = float64(a)
-
-	x := a
-
-	fmt.Println("\nTypes: ")
-	fmt.Println("a is:", reflect.TypeOf(a))
-	fmt.Println("b is:", reflect.TypeOf(b))
-	fmt.Println("x is:", reflect.TypeOf(x))
+	http.HandleFunc("/", index_handler)
+	http.HandleFunc("/about", about_handler)
+	http.ListenAndServe(":8000", nil) // nil: Python's None
 }
-
-/*
-Variables out of a function are used to be defined with 'var'.
-Variables inside a function commonly have no type specification. Go will know for us.
-Once a type is assigned to a variable this type can't chance once program is compiled.
-
-Ways to define variables:
-1. num1, num2 := 5.6, 9.5 (by default will be float64)
-2. var num1, num2 float64 = 5.6, 9.5
-3. num1, num2 float64 = 5.6, 9.5
-*/
