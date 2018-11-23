@@ -12,6 +12,7 @@ This chapter will be updated every time I will start a new course/tutorial/test.
 > > 1. Introduction: Basic HelloWorld program in Go.
 > > 2. Syntax
 > > 3. Types
+> > 4. Pointers
 
 
 ## Go documentation:
