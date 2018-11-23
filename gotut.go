@@ -2,19 +2,21 @@ package main
 
 import (
 	"fmt"
-	"net/http"
 )
 
-func index_handler(w http.ResponseWriter, r *http.Request) { // r *http.Request: Reading through http.Request
-	fmt.Fprint(w, "Whoa, Go is neat!")
-}
-
-func about_handler(w http.ResponseWriter, r *http.Request) { // r *http.Request: Reading through http.Request
-	fmt.Fprint(w, "WebApp made with Golang!")
+type car struct {
+	gas_pedal      uint16 // min 0 max 65535
+	brake_pedal    uint16
+	steering_wheel int16
+	top_speed_kmh  float64
 }
 
 func main() {
-	http.HandleFunc("/", index_handler)
-	http.HandleFunc("/about", about_handler)
-	http.ListenAndServe(":8000", nil) // nil: Python's None
+	a_car := car{22341, 0, 12561, 225.0}
+	fmt.Println(a_car.gas_pedal)
 }
+
+/*
+Struct can be created also using:
+a_car := car{gas_pedal: 22341, brake_pedal: 0, steering_wheel: 12561, top_speed_kmh: 225.0}
+*/
