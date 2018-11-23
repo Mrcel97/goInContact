@@ -16,6 +16,7 @@ This chapter will be updated every time I will start a new course/tutorial/test.
 > > 5. WebApplication
 > > 6. Structs
 > > 7. Methods
+> > 8. MethodsV2
 
 
 ## Go documentation:

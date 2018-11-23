@@ -14,12 +14,21 @@ type car struct {
 	top_speed_kmh  float64
 }
 
-func (c car) kmh() float64 {
+func (c car) kmh() float64 { // Method: Value Receiver.
 	return float64(c.gas_pedal) * (c.top_speed_kmh / usixteenbitmax)
 }
 
-func (c car) mph() float64 {
+func (c car) mph() float64 { // Method: Value Receiver.
 	return float64(c.gas_pedal) * (c.top_speed_kmh / usixteenbitmax / kmh_multiple)
+}
+
+func (c *car) new_top_speed(newspeed float64) { // Method: Pointer Receiver.
+	c.top_speed_kmh = newspeed
+}
+
+func car_update(c car, speed float64) car { // Function: --Efficient
+	c.top_speed_kmh = speed
+	return c
 }
 
 func main() {
@@ -28,10 +37,18 @@ func main() {
 
 	fmt.Println(a_car.kmh())
 	fmt.Println(a_car.mph())
+
+	a_car.new_top_speed(500)
+	fmt.Println(a_car.kmh())
+	fmt.Println(a_car.mph())
+
+	a_car = car_update(a_car, 600)
+	fmt.Println(a_car.kmh())
+	fmt.Println(a_car.mph())
 }
 
 /*
 Methods in go:
-1. Value recivers: Calculations given some values.
-2. Pointer recivers: Modify values.
+1. Value receivers: Calculations given some values. - Makes a copy - Small structures fast operations.
+2. Pointer receivers: Modify values. - Modify the original - Big structures heavy operations.
 */
