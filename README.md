@@ -10,6 +10,7 @@ This chapter will be updated every time I will start a new course/tutorial/test.
 > > BumperCourse:  
 > Basic introduction into Go language, this section will include different chapters following [Sentdex Tutorial](https://www.youtube.com/watch?v=G3PvTWRIhZA) on YT:  
 > > 1. Introduction: Basic HelloWorld program in Go.
+> > 3. Types
 
 
 ## Go documentation:
