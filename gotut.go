@@ -2,19 +2,43 @@ package main
 
 import (
 	"fmt"
-	"math"
-	"math/rand"
+	"reflect"
 )
 
-// In Go, main() wil be always called by default
+func add(x, y float64) float64 {
+	return x + y
+}
+
+func multiple(a, b string) (string, string) {
+	return a, b
+}
+
 func main() {
-	foo()
+	num1, num2 := 5.6, 9.5
+	w1, w2 := "Hey", "there"
+
+	fmt.Println(add(num1, num2))
+	fmt.Println(multiple(w1, w2))
+
+	// Cast:
+	var a int = 62
+	var b float64 = float64(a)
+
+	x := a
+
+	fmt.Println("\nTypes: ")
+	fmt.Println("a is:", reflect.TypeOf(a))
+	fmt.Println("b is:", reflect.TypeOf(b))
+	fmt.Println("x is:", reflect.TypeOf(x))
 }
 
-func foo() {
-	// In Go if the first letter is capitalized 'P' on Println() and 'S' on Sqrt() function will be exported by Go.
-	// In lower case, will be considered as an internal function.
-	fmt.Println("The square root of 4 is", math.Sqrt(4))
+/*
+Variables out of a function are used to be defined with 'var'.
+Variables inside a function commonly have no type specification. Go will know for us.
+Once a type is assigned to a variable this type can't chance once program is compiled.
 
-	fmt.Println("A number from 0-90:", rand.Intn(100))
-}
+Ways to define variables:
+1. num1, num2 := 5.6, 9.5 (by default will be float64)
+2. var num1, num2 float64 = 5.6, 9.5
+3. num1, num2 float64 = 5.6, 9.5
+*/
