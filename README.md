@@ -14,6 +14,10 @@ This chapter will be updated every time I will start a new course/tutorial/test.
 > > 3. Types
 > > 4. Pointers
 > > 5. WebApplication
+> > 6. Structs
+> > 7. Methods
+> > 8. MethodsV2
+> > 9. WebDevBasics
 
 
 ## Go documentation:
