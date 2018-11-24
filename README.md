@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://www.devteam.space/wp-content/uploads/2017/03/gopher_head-min.png" alt="Golang_image" height="150px" />
+</p>
+
 # Go Contact Course
 
 ## Course aim:
