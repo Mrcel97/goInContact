@@ -46,7 +46,7 @@ Some tutorials have outdated steps which can make the tutorial impossible to tes
     Modifications on step 11: 
     1.  Changed XML parsing to HTML parsing.
     2.  Changed step aim to: Parse [golang website](https://golang.org/) topbar links and show them into our webapp '/links'
-    3.  Using new package: [package html](https://godoc.org/golang.org/x/net/html#example-Parse)
+    3.  Using new package: [package html](https://godoc.org/golang.org/x/net/html)
     4.  Removed structs: SitemapIndex and Location.
     5.  Added structs: Link.
 
